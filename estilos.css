@@ -6,7 +6,8 @@ body {
   font-family: monospace;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 0;
 }
 
@@ -18,7 +19,7 @@ h2 {
   font-family: "Aldrich", sans-serif;
 }
 
-h1 + h2 {
+h1+h2 {
   font-size: 100%;
   margin-top: 0.5em;
   color: silver;
@@ -40,11 +41,45 @@ a:active {
   color: red;
 }
 
+.boo1,
+.boo2,
+.boo3 {
+  position: fixed;
+  opacity: 0.1;
+  width: 40px;
+  transform: scaleX(-1);
+  transition: all 0.5s ease;
+}
+
+.boo1 {
+  right: 10px;
+  width: 60px;
+}
+
+.boo2 {
+  left: 10px;
+  top: 50%;
+  transform: scaleX(1);
+  position: absolute;
+}
+
+.boo3 {
+  top: 10px;
+  right: 10px;
+}
+
+.boo1:hover,
+.boo2:hover,
+.boo3:hover {
+  opacity: 1; 
+  width: 150px;
+}
 
 /* --- Cabeçalho --- */
+
 #cabecalho {
-  background-color: rgba(0, 0, 0, .95);
-  box-shadow: 2px 10px 10px rgba(0,0,0, .25);
+  background-color: rgba(0, 0, 0, 0.836);
+  box-shadow: 2px 10px 10px rgba(0, 0, 0, .25);
   padding-top: 1em;
   text-align: center;
 }
@@ -61,18 +96,17 @@ a:active {
 #menu-de-navegacao ul {
   margin-bottom: 0;
   padding-left: 0%;
-  list-style-type: none;  
+  list-style-type: none;
 }
 
 #menu-de-navegacao li {
   display: inline-block;
-  margin: 10px 20px;  
+  margin: 10px 20px;
 }
 
 #menu-de-navegacao a {
   padding: 5px 10px;
 }
-
 
 
 /* --- Conteúdo principal da página --- */
@@ -83,11 +117,10 @@ a:active {
 }
 
 
-
-
 /* --- Principal >> Postagens principais --- */
 #posts-principais {
   padding-top: 1.5em;
+  position: relative;
 }
 
 #posts-principais h1 {
@@ -100,10 +133,15 @@ a:active {
   margin-left: 2.5%;
   margin-right: 2.5%;
   display: inline-block;
+  position: relative;
 }
 
 #posts-principais .post .titulo {
-  text-shadow: 1px 1px black;
+  text-shadow: 1px 1px rgb(19, 19, 19);
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 #posts-principais .post img {
@@ -144,7 +182,15 @@ a:active {
   display: inline-block;
 }
 
-
+.tag-novidade {
+  background-color: rgb(0, 170, 57);
+  color: rgb(241, 241, 241);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 3px 6px;
+  display: inline-block;
+  margin-right: 1em;
+}
 
 
 /* --- Principal >> Nuvem de tags --- */
@@ -159,6 +205,15 @@ a:active {
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
   text-align: center;
+  position: sticky;
+  top: 0px;
+}
+
+.tag-1:active,
+.tag-2:active,
+.tag-3:active {
+  margin-top: -2px;
+  margin-left: -2px;
 }
 
 #tags h1 {
@@ -177,16 +232,12 @@ a:active {
   color: white;
   text-shadow: 1px 1px black;
 }
-
 .tag-2 {
   font-size: 125%;
 }
-
 .tag-3 {
   font-size: 150%;
 }
-
-
 
 
 
@@ -200,9 +251,6 @@ a:active {
 #rodape .logo-rodape {
   margin-right: 2em;
 }
-
-
-
 
 
 /* --- Vídeo --- */
@@ -228,7 +276,7 @@ a:active {
   width: 100%;
 }
 
-.backdrop.desaparecido + #unmute {
+.backdrop.desaparecido+#unmute {
   display: none;
 }
 
